@@ -1,0 +1,492 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CheckpointFileName="D:\Tamrin_BI\Checkpoint_file"
+  DTS:CheckpointUsage="1"
+  DTS:CreationDate="4/6/2023 11:06:12 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="REMOTE-PC"
+  DTS:CreatorName="REMOTE-PC\Remote-Pc"
+  DTS:DTSID="{564B5ABD-5157-4990-8F40-D0F0B361AD69}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package11"
+  DTS:PackageType="5"
+  DTS:SaveCheckpoints="True"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{A2BFEA15-9E65-4589-92E5-C8A4EA56822A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DB1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{10ECDA83-308F-41DE-B152-792F01361C5C}"
+      DTS:ObjectName="LocalHost.DB1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=;User ID=;Initial Catalog=;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package11-{10ECDA83-308F-41DE-B152-792F01361C5C}LocalHost.DB1;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DB1 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4CBD645-837F-46E1-A6AA-87E62B459664}"
+      DTS:ObjectName="LocalHost.DB1 1">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[User::V_dbname]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[User::V_pass]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::V_servername]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[User::V_loginname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=;User ID=;Initial Catalog=;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package11-{E4CBD645-837F-46E1-A6AA-87E62B459664}LocalHost.DB1 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACnrHjSWwwvC2l1Yhkmz1JSR40MB87vA04j3scNzMLufwAAAAAOgAAAAAIAACAAAACX8/GxRfPARSZ/eG9Pt+iBNpua0Re/2a0ivpRC4USOQhAAAAA1gAkpDEjhjwsg3318yYWBQAAAADeJIG4J7xUoMUZ8GBZiMCuIGw0qSM2C5UpG5UUq+SKGjLu6P4a9mpFOAQcAHEtjEpPdbmdWSHjwY45Fh2dNB7Y</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.db2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DC0FECF7-CCCD-40FA-9AA2-35A9FF427F9C}"
+      DTS:ObjectName="LocalHost.db2">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[User::V_dbname]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[User::V_pass]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::V_servername]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[User::V_loginname]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=;User ID=;Initial Catalog=;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package11-{DC0FECF7-CCCD-40FA-9AA2-35A9FF427F9C}LocalHost.db2;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADspN5FYmg5BjXL9Uv8CXT19uBpZeGQu7qt+qlPz4k2nAAAAAAOgAAAAAIAACAAAADBJYNL5TOtax61FNRD/vIfwWUPsgjeCPrHlap9AooBJRAAAACD5PvUGfyZdInCZcbpO+I+QAAAAFTlUxkHEzpGOPH7VVQaELt2o0T4PRkMnQKWwuRuOJiu5cx9i9SCHx9NjKfefruy2zPoa+qIjPzy6hePS3t0kUU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Maindb]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9B494561-9B60-43C3-BFFF-F95A8802A053}"
+      DTS:ObjectName="LocalHost.Maindb">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=;User ID=;Initial Catalog=;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package11-{9B494561-9B60-43C3-BFFF-F95A8802A053}LocalHost.Maindb;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B480D17-37C8-45C9-AD64-424B1F48B89F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_dbname">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{71D9447A-BBB7-4CA9-AA13-F6AFAF485F2D}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A13FC48D-5923-4926-A640-49393FC0942C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_loginname">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{169961C2-0D8D-48D6-A8CB-C77EEB3073F5}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_pass">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{81DA07A3-DAD3-4A80-A343-71A7CB01F045}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_RecCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35EA77D7-5129-448E-BA34-5500950BD368}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Result">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1E1521E3-9735-448F-8C0E-44BCC8046DF4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_servername">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task-get data from maindb"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{141302A4-1737-4129-BEAF-C3EE92CF6FED}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task-get data from maindb"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9B494561-9B60-43C3-BFFF-F95A8802A053}"
+          SQLTask:SqlStatementSource="select ID,servername,loginname,password,dbname from maindb..Configtable&#xA;"
+          SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::V_Result" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{41551CB1-50D3-4895-9F4B-96F856F494C2}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
+        DTS:DTSID="{91F7944E-30EC-4F52-A372-32206DA95209}"
+        DTS:ObjectName="{91F7944E-30EC-4F52-A372-32206DA95209}">
+        <DTS:ObjectData>
+          <FEEADO
+            EnumType="EnumerateRowsInFirstTable"
+            VarName="User::V_Result" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{C0AD591A-C7E5-4C28-9682-5FF9EE5E52A7}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="V_RecCount">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Execute SQL Task 1-update reccount"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3C6C94CF-A10E-47E3-B023-70C6B9370C80}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task 1-update reccount"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{9B494561-9B60-43C3-BFFF-F95A8802A053}"
+              SQLTask:SqlStatementSource="update maindb..Configtable&#xA;set reccount=?&#xA;where id=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::V_RecCount"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::V_ID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Execute SQL Task-get reccount-multiple connections"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{D049A16C-5D10-45C9-A27E-2B6287E54BF5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task-get reccount-multiple connections"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{DC0FECF7-CCCD-40FA-9AA2-35A9FF427F9C}"
+              SQLTask:SqlStatementSource="select count(*) from students"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::V_RecCount" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E1D490C6-70AD-4970-A53F-6C7914AE1539}"
+          DTS:From="Package\Foreach Loop Container\Execute SQL Task-get reccount-multiple connections"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Execute SQL Task 1-update reccount" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{BDE6CE2B-A022-404B-B1EF-9D9CC054E5B6}"
+          DTS:ObjectName="{BDE6CE2B-A022-404B-B1EF-9D9CC054E5B6}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::V_ID" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{DA8621AD-7859-43DD-8A15-95A24EC3FCA2}"
+          DTS:ObjectName="{DA8621AD-7859-43DD-8A15-95A24EC3FCA2}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::V_servername" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{EC43ACA4-85E3-498C-BDDD-5CDC15A929C3}"
+          DTS:ObjectName="{EC43ACA4-85E3-498C-BDDD-5CDC15A929C3}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::V_dbname" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{3BA0EB48-C946-49EA-B7D7-FF0C0909AA72}"
+          DTS:ObjectName="{3BA0EB48-C946-49EA-B7D7-FF0C0909AA72}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::V_loginname" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{AF1F7931-7FE3-4210-9286-E0AB93EA2C83}"
+          DTS:ObjectName="{AF1F7931-7FE3-4210-9286-E0AB93EA2C83}"
+          DTS:ValueIndex="4"
+          DTS:VariableName="User::V_pass" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0BC5BFE4-7A0F-4633-8EA5-201A46934D1B}"
+      DTS:From="Package\Execute SQL Task-get data from maindb"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{E2DE7642-7636-44C6-B2EF-84EFEB8E062E}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{FA9E9934-7E91-4C41-8B26-FF984CDAC346}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Script Task-email"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{2043AD60-CE69-43B0-8E87-D01FDB87C20C}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Script Task-email">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_5ad054c2dc7f4faf97594de68db7a09c"
+              VSTAMajorVersion="16"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="System::ErrorCode,System::ErrorDescription,$Project::P_email_from,$Project::P_email_to" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="270,42"
+          Id="Package\Execute SQL Task-get data from maindb"
+          TopLeft="273,35" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Foreach Loop Container\Execute SQL Task 1-update reccount"
+          TopLeft="50,102" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Foreach Loop Container\Execute SQL Task-get reccount-multiple connections"
+          TopLeft="45,25" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="158,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.5,35"
+              Start="0,0"
+              End="18.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
+                  <mssgle:LineSegment
+                    End="14.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.5,17.5"
+                    Point2="18.5,17.5"
+                    Point3="18.5,21.5" />
+                  <mssgle:LineSegment
+                    End="18.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="308,197"
+          Size="308,240"
+          Id="Package\Foreach Loop Container"
+          TopLeft="0,134" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="408,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-254,57"
+              Start="0,0"
+              End="-254,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="-4,28.5" />
+                  <mssgle:LineSegment
+                    End="-250,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-250,28.5"
+                    Point2="-254,28.5"
+                    Point3="-254,32.5" />
+                  <mssgle:LineSegment
+                    End="-254,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnError]\Script Task-email"
+          TopLeft="NaN,NaN" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

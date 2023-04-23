@@ -1,0 +1,150 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/13/2023 6:28:40 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="REMOTE-PC"
+  DTS:CreatorName="REMOTE-PC\Remote-Pc"
+  DTS:DTSID="{9F15DBCD-6E4A-4557-ACF8-19ED2A70F3D9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package20"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{008CB782-7E6D-4651-8859-973F409EE231}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{E72F5AAF-D78F-442C-AE1B-33386A5B932E}"
+      DTS:ObjectName="HTTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABfb7nmz6I6TBmKv6ZLwRpyuoogmiULhsSqpQ7zlKLyBwAAAAAOgAAAAAIAACAAAAA8mFiSTB5FqagjQqMXCy8OG6VxSWmdbDtAsl0Vt9d6YBAAAAAQgElNf/xwhlO3JRxOs9luQAAAAL414P5UtMcMFRA3+tPRCpLH74zRlsZr4BJGtAV209v9kU/DBx6GErS8QET28qJybrwB51OUaMcdNCFTcxyXQao</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACiQGrhO2/kh7TP+wDu13XY5Ix34WX9Q6oA8KswZmCweQAAAAAOgAAAAAIAACAAAAAHgA8t9R39eG9tRiEP39jS27wAslQaXqFiRrbdxIzKjBAAAADXPvecBrICW6GVX6t3lzvCQAAAAFEEJHAz6ed6sdlT+p40o/HhfrkHjnUUuSqsB6DP0fLEZOsOdFoSMnCW8Bh15XAp0Bl0IkTFFXhqpztNlxhC8pw</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[HTTP Connection Manager 1]"
+      DTS:CreationName="HTTP"
+      DTS:DTSID="{A2150CE8-B2B4-45BA-AD78-7347137E9C90}"
+      DTS:ObjectName="HTTP Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx?WSDL">
+          <DTS:HttpConnection
+            DTS:ServerURL="https://ecs.syr.edu/faculty/fawcett/Handouts/cse775/code/calcWebService/Calc.asmx?WSDL">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvFJhEr4KaRJVEHFFK+YH+eeOM1gH9bedufsUYSRUk4QAAAAAOgAAAAAIAACAAAADLgsLrakrfmK7LpYqRad9uOL+TtOn+MNb1DSWNgow8WBAAAAAmH+7gpeCOviTgxbns+idkQAAAAMx66p6zj6A4WPDrzN0tTtha68nSN1vr0Kfh0b/FwgGWhqeKJ6Ai3PRe4Bp7araDkewKsRQCWCNWnSCXBECY85s</DTS:Property>
+            <DTS:Property
+              DTS:Name="ProxyPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ1rd2nLVKEGjp2+RfMTTJAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADUpgb1UnDDim30VoCC4Xi803S7n6hJTvl19CAnCEJwKAAAAAAOgAAAAAIAACAAAAB/FbAv8TBL5xbJ4gW5t9HAXhlO0r7DV30mz3OU5CwsyBAAAABjHpyobvefj37VlvLAZHZ8QAAAAKdM8jSJtd22e1neAt6zXl9mu8V6KldlMLNAX9T5Zxt+zPQ7KM1LahqOiGALP7EkCzmH3sLsuS0VyQbzLtaoigc</DTS:Property>
+          </DTS:HttpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9007D9F6-4BC5-4AED-808E-575A0BD67CA6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_1">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{68C04F99-AD85-426F-B655-829044529E0E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_2">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C7C73755-22EE-4905-A713-3496F18DE2B7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Result">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Web Service Task"
+      DTS:CreationName="Microsoft.WebServiceTask"
+      DTS:Description="Web Service Task"
+      DTS:DTSID="{436E7E95-C670-4DE0-A5BC-48EA468D17C6}"
+      DTS:ExecutableType="Microsoft.WebServiceTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Web Service Task"
+      DTS:TaskContact="Web Service Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <WSTask:WebServiceTaskData
+          WSTask:ConnectionName="{A2150CE8-B2B4-45BA-AD78-7347137E9C90}"
+          WSTask:Service="Calculator_x0020_Web_x0020_Service"
+          WSTask:WSDLFile="D:\Tamrin_BI\WSDL_Sample"
+          WSTask:OverwriteWSDLFile="True"
+          WSTask:OutputType="Variable"
+          WSTask:OutputLocation="User::V_Result" xmlns:WSTask="www.microsoft.com/sqlserver/dts/tasks/webservicetask">
+          <WSTask:MethodInfo
+            WSTask:MethodName="Add"
+            WSTask:MessageName="">
+            <WSTask:Documentation>Computes the sum of two integers</WSTask:Documentation>
+          </WSTask:MethodInfo>
+        </WSTask:WebServiceTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Web Service Task"
+          TopLeft="280,70" />
+        <AnnotationLayout
+          Text="وقتی میخوام ورودی تعریف کنم چیزی در اون قسمت نمیاره"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="197,60"
+          Id="3c920835-11b1-4608-b292-526ef13ac0a4"
+          TopLeft="542,66" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
